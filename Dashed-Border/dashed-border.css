@@ -1,179 +1,436 @@
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
-    min-height: 100vh;
-    background-color: #eee;
-    background-size: 10px 10px;
-    background-image: radial-gradient(circle at 50% 50%, rgb(255, 255, 255), #ddd 1px, transparent 1px), radial-gradient(circle at 0 0, #ddd, rgb(255, 255, 255) 1px, transparent 1px), radial-gradient(circle at 0 100%, #ddd, rgb(255, 255, 255) 1px, transparent 1px), radial-gradient(circle at 100% 0, #ddd, rgb(255, 255, 255) 1px, transparent 1px), radial-gradient(circle at 100% 100%, #ddd, #ddd 1px, transparent 1px);
-    color: #333;
+  font-family: "Open Sans Condensed", sans-serif;
+  min-height: 100vh;
+  background-color: #eee;
+  background-size: 10px 10px;
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      rgb(255, 255, 255),
+      #ddd 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 0 0,
+      #ddd,
+      rgb(255, 255, 255) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 0 100%,
+      #ddd,
+      rgb(255, 255, 255) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 100% 0,
+      #ddd,
+      rgb(255, 255, 255) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle at 100% 100%, #ddd, #ddd 1px, transparent 1px);
+  color: #333;
 }
 
 :root {
-    --clr-border: #333;
-    --AnimationLength: 0px;
+  --clr-border: #333;
+  --AnimationLength: 0px;
 }
 
 .content {
-    width: 100%;
-    max-width: 960px;
-    padding: 2em 2em 10em;
+  width: 100%;
+  max-width: 960px;
+  padding: 2em 2em 10em;
 }
 
 h2 {
-    margin: 1em auto;
-    text-decoration: underline;
-    text-decoration-color: #aaa;
+  margin: 1em auto;
+  text-decoration: underline;
+  text-decoration-color: #aaa;
 }
 
 h2 span {
-    color: #777;
+  color: #777;
 }
 
 p {
-    margin: 2em auto;
-    font-weight: bold;
+  margin: 2em auto;
+  font-weight: bold;
 }
 
 hr {
-    height: 3px;
-    border: none;
-    margin: 4em auto;
-    background-color: #aaa;
+  height: 3px;
+  border: none;
+  margin: 4em auto;
+  background-color: #aaa;
 }
 
 .boxes {
-    width: 100%;
-    display: grid;
-    grid-gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  width: 100%;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 123px;
-    font-size: 2em;
-    padding: 0.5em;
-    line-height: 1;
-    background-position: 0 0, 0 0, 100% 0, 0 100%;
-    background-size: 3px 100%, 100% 3px, 3px 100%, 100% 3px;
-    background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 123px;
+  font-size: 2em;
+  padding: 0.5em;
+  line-height: 1;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-size: 3px 100%, 100% 3px, 3px 100%, 100% 3px;
+  background-repeat: no-repeat;
 }
 
 .box-a {
-    background-image: repeating-linear-gradient(0deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(90deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(180deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(270deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px);
-    border-image: repeating-linear-gradient(0deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px);
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  border-image: repeating-linear-gradient(
+    0deg,
+    var(--clr-border),
+    var(--clr-border) 10px,
+    transparent 10px,
+    transparent 20px
+  );
 }
 
 .box-b {
-    background-image: repeating-linear-gradient(45deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(135deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(225deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(315deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px);
+  background-image: repeating-linear-gradient(
+      45deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      225deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      315deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    );
 }
 
 .box-c {
-    background-image: repeating-linear-gradient(0deg, var(--clr-border), var(--clr-border) 3px, transparent 3px, transparent 6px), repeating-linear-gradient(90deg, var(--clr-border), var(--clr-border) 3px, transparent 3px, transparent 6px), repeating-linear-gradient(180deg, var(--clr-border), var(--clr-border) 3px, transparent 3px, transparent 6px), repeating-linear-gradient(270deg, var(--clr-border), var(--clr-border) 3px, transparent 3px, transparent 6px);
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 3px,
+      transparent 3px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--clr-border),
+      var(--clr-border) 3px,
+      transparent 3px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--clr-border),
+      var(--clr-border) 3px,
+      transparent 3px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      var(--clr-border),
+      var(--clr-border) 3px,
+      transparent 3px,
+      transparent 6px
+    );
 }
 
 .box-d {
-    background-image: repeating-linear-gradient(0deg, var(--clr-border), var(--clr-border) 30px, transparent 30px, transparent 36px), repeating-linear-gradient(90deg, var(--clr-border), var(--clr-border) 30px, transparent 30px, transparent 36px), repeating-linear-gradient(180deg, var(--clr-border), var(--clr-border) 30px, transparent 30px, transparent 36px), repeating-linear-gradient(270deg, var(--clr-border), var(--clr-border) 30px, transparent 30px, transparent 36px);
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 30px,
+      transparent 30px,
+      transparent 36px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--clr-border),
+      var(--clr-border) 30px,
+      transparent 30px,
+      transparent 36px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--clr-border),
+      var(--clr-border) 30px,
+      transparent 30px,
+      transparent 36px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      var(--clr-border),
+      var(--clr-border) 30px,
+      transparent 30px,
+      transparent 36px
+    );
 }
 
 .box-e {
-    background-image: linear-gradient(0deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), linear-gradient(90deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), linear-gradient(180deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), linear-gradient(270deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%);
+  background-image: linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--clr-border) 75%
+    ),
+    linear-gradient(
+      90deg,
+      var(--clr-border),
+      var(--clr-border) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--clr-border) 75%
+    ),
+    linear-gradient(
+      180deg,
+      var(--clr-border),
+      var(--clr-border) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--clr-border) 75%
+    ),
+    linear-gradient(
+      270deg,
+      var(--clr-border),
+      var(--clr-border) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--clr-border) 75%
+    );
 }
 
 .box-f {
-    background-image: linear-gradient(0deg, transparent 15%, var(--clr-border) 15%, var(--clr-border) 85%, transparent 85%), linear-gradient(90deg, transparent 15%, var(--clr-border) 15%, var(--clr-border) 85%, transparent 85%), linear-gradient(180deg, transparent 15%, var(--clr-border) 15%, var(--clr-border) 85%, transparent 85%), linear-gradient(270deg, transparent 15%, var(--clr-border) 15%, var(--clr-border) 85%, transparent 85%);
+  background-image: linear-gradient(
+      0deg,
+      transparent 15%,
+      var(--clr-border) 15%,
+      var(--clr-border) 85%,
+      transparent 85%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 15%,
+      var(--clr-border) 15%,
+      var(--clr-border) 85%,
+      transparent 85%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 15%,
+      var(--clr-border) 15%,
+      var(--clr-border) 85%,
+      transparent 85%
+    ),
+    linear-gradient(
+      270deg,
+      transparent 15%,
+      var(--clr-border) 15%,
+      var(--clr-border) 85%,
+      transparent 85%
+    );
 }
 
 .box-g {
-    background-image: repeating-linear-gradient(0deg, var(--clr-border), var(--clr-border) 10px, transparent 20px, transparent 30px, var(--clr-border) 40px), repeating-linear-gradient(90deg, var(--clr-border), var(--clr-border) 10px, transparent 20px, transparent 30px, var(--clr-border) 40px), repeating-linear-gradient(180deg, var(--clr-border), var(--clr-border) 10px, transparent 20px, transparent 30px, var(--clr-border) 40px), repeating-linear-gradient(270deg, var(--clr-border), var(--clr-border) 10px, transparent 20px, transparent 30px, var(--clr-border) 40px);
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 20px,
+      transparent 30px,
+      var(--clr-border) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 20px,
+      transparent 30px,
+      var(--clr-border) 40px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 20px,
+      transparent 30px,
+      var(--clr-border) 40px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 20px,
+      transparent 30px,
+      var(--clr-border) 40px
+    );
 }
 
 .box-h {
-    background-image: repeating-linear-gradient(0deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(90deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(180deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(270deg, var(--clr-border), var(--clr-border) 10px, transparent 10px, transparent 20px);
-    background-size: 3px calc(100% + 20px), calc(100% + 20px) 3px, 3px calc(100% + 20px), calc(100% + 20px) 3px;
-    animation: boxBorderAnimation 1s infinite linear;
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      var(--clr-border),
+      var(--clr-border) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  background-size: 3px calc(100% + 20px), calc(100% + 20px) 3px,
+    3px calc(100% + 20px), calc(100% + 20px) 3px;
+  animation: boxBorderAnimation 1s infinite linear;
 }
 
 @keyframes boxBorderAnimation {
-    from {
-        background-position: 0 0, -20px 0, 100% -20px, 0 100%;
-    }
+  from {
+    background-position: 0 0, -20px 0, 100% -20px, 0 100%;
+  }
 
-    to {
-        background-position: 0 -20px, 0 0, 100% 0, -20px 100%;
-    }
+  to {
+    background-position: 0 -20px, 0 0, 100% 0, -20px 100%;
+  }
 }
 
 .generator {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3em;
 }
 
 @media (max-width: 768px) {
-    .generator {
-        grid-template-columns: 1fr;
-    }
+  .generator {
+    grid-template-columns: 1fr;
+  }
 }
 
 form {
-    width: 100%;
+  width: 100%;
 }
 
 form label {
-    display: block;
-    font-weight: bold;
-    width: 100%;
+  display: block;
+  font-weight: bold;
+  width: 100%;
 }
 
-form label+label {
-    margin-top: 1.5em;
+form label + label {
+  margin-top: 1.5em;
 }
 
 form .input {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .result {
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-    line-height: 1.2;
-    background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  line-height: 1.2;
+  background-repeat: no-repeat;
 }
 
 .result span {
-    display: block;
-    padding-left: 4em;
-    text-indent: -2em;
-    margin: 0.5em auto;
+  display: block;
+  padding-left: 4em;
+  text-indent: -2em;
+  margin: 0.5em auto;
 }
 
 @keyframes borderAnimation {
-    from {
-        background-position: 0 0, var(--AnimationLength) 0, 100% var(--AnimationLength), 0 100%;
-    }
+  from {
+    background-position: 0 0, var(--AnimationLength) 0,
+      100% var(--AnimationLength), 0 100%;
+  }
 
-    to {
-        background-position: 0 var(--AnimationLength), 0 0, 100% 0, var(--AnimationLength) 100%;
-    }
+  to {
+    background-position: 0 var(--AnimationLength), 0 0, 100% 0,
+      var(--AnimationLength) 100%;
+  }
 }
 
 .twitterLink {
-    position: fixed;
-    bottom: 0.5em;
-    right: 0.5em;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
 }
 
 .twitterLink img {
-    width: 2em;
-    filter: grayscale(100%);
-    transition: filter 0.25s;
+  width: 2em;
+  filter: grayscale(100%);
+  transition: filter 0.25s;
 }
 
 .twitterLink img:hover {
-    filter: grayscale(0%);
+  filter: grayscale(0%);
 }

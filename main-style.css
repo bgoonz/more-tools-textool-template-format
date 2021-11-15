@@ -1,7 +1,7 @@
 @media (prefers-color-scheme: dark) {
   img {
-    opacity: .75;
-    transition: opacity .5s ease-in-out;
+    opacity: 0.75;
+    transition: opacity 0.5s ease-in-out;
   }
   img:hover {
     opacity: 1;
@@ -12,7 +12,7 @@ html {
   --text-color-light: #8cabd9;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --text-color-normal: hsl(210, 10%, 62%);
   --text-color-light: hsl(210, 15%, 35%);
   --text-color-richer: hsl(210, 50%, 72%);
@@ -44,8 +44,8 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   img {
-    opacity: .75;
-    transition: opacity .5s ease-in-out;
+    opacity: 0.75;
+    transition: opacity 0.5s ease-in-out;
   }
   img:hover {
     opacity: 1;

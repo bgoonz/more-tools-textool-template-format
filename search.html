@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Whitespace Remover</title>
+    <title>Duplicate Text Line Remover</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -46,29 +46,9 @@
                 </button>
             </nav>
 
+            <!--Main Content -->
             <div class="container-fluid">
-                <h1 class="mt-4 text-center">Whitespace Remover</h1>
-                <p class="text-center">
-                    Removes all the whitespace in your text, including space.
-                </p>
-                <p class="text-center">
-                    First, paste your text in the input box below. Then, click on the
-                    Remove whitespace button.
-                </p>
-
-                <div class="row mt-5 m-5">
-                    <div class="col-md-12">
-                        <div id="InputandOutput">
-                            <label for="inputText">
-                                <h5 id="inputLabel">Input:</h5>
-                            </label>
-                            <textarea class="form-control" id="inputText" rows="10"></textarea>
-                            <button class="btn btn-primary mt-1 float-right" onclick="whiteSpaceRemove();">
-                                Remove WhiteSpace
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <iframe id="ifm" src="searchblog/index.html"></iframe>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -80,7 +60,8 @@
     <footer>
         <p class="text-center">
             <a href="https://startbootstrap.com/templates/simple-sidebar/"></a>Made
-            by <a href="https://github.com/toorhamza">Bryan Guner</a>
+            by
+            <a href="https://github.com/toorhamza">Bryan Guner</a>
         </p>
     </footer>
 
@@ -97,6 +78,33 @@
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
+    </script>
+    <script>
+        const buffer = 20; //scroll bar buffer
+        const iframe = document.getElementById("ifm");
+
+        function pageY(elem) {
+            return elem.offsetParent ?
+                elem.offsetTop + pageY(elem.offsetParent) :
+                elem.offsetTop;
+        }
+
+        function resizeIframe() {
+            let height = document.documentElement.clientHeight;
+            height -= pageY(document.getElementById("ifm")) + buffer;
+            height = height < 0 ? 0 : height;
+            document.getElementById("ifm").style.height = `${height}px`;
+            document.getElementById("ifm").style.width = `${100}%`;
+        }
+
+        // .onload doesn't work with IE8 and older.
+        if (iframe.attachEvent) {
+            iframe.attachEvent("onload", resizeIframe);
+        } else {
+            iframe.onload = resizeIframe;
+        }
+
+        window.onresize = resizeIframe;
     </script>
 </body>
 
